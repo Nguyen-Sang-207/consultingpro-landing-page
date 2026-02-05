@@ -12,12 +12,23 @@ const Footer: React.FC = () => (
                             Consulting<span className="text-primary not-italic">Pro</span>
                         </span>
                     </Link>
-                    <p className="text-lg font-medium leading-relaxed">
+                    <p className="text-lg font-medium leading-relaxed text-slate-300">
                         Revolutionizing how companies scale and adapt in the digital age. Your ambition, our strategy.
                     </p>
                     <div className="flex gap-4">
-                        {[Facebook, Twitter, Linkedin].map((Icon, idx) => (
-                            <a key={idx} href="https://twitter.com" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-primary hover:text-white transition-all group hover:scale-110">
+                        {[
+                            { Icon: Facebook, label: "Facebook" },
+                            { Icon: Twitter, label: "Twitter" },
+                            { Icon: Linkedin, label: "LinkedIn" }
+                        ].map(({ Icon, label }, idx) => (
+                            <a
+                                key={idx}
+                                href="#"
+                                target="_blank"
+                                rel="noreferrer"
+                                aria-label={`Follow us on ${label}`}
+                                className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-primary hover:text-white transition-all group hover:scale-110"
+                            >
                                 <Icon size={20} />
                             </a>
                         ))}
@@ -26,7 +37,7 @@ const Footer: React.FC = () => (
 
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-12 lg:gap-24">
                     <div className="space-y-6">
-                        <h4 className="text-xs uppercase tracking-[0.3em] font-black text-white">Platform</h4>
+                        <h2 className="text-xs uppercase tracking-[0.3em] font-black text-white">Platform</h2>
                         <ul className="space-y-4 font-bold text-sm">
                             <li><Link href="/about" className="hover:text-white transition-colors hover:underline decoration-primary underline-offset-4">Our Approach</Link></li>
                             <li><Link href="/testimonials" className="hover:text-white transition-colors hover:underline decoration-primary underline-offset-4">Success Stories</Link></li>
@@ -35,7 +46,7 @@ const Footer: React.FC = () => (
                         </ul>
                     </div>
                     <div className="space-y-6">
-                        <h4 className="text-xs uppercase tracking-[0.3em] font-black text-white">Solutions</h4>
+                        <h2 className="text-xs uppercase tracking-[0.3em] font-black text-white">Solutions</h2>
                         <ul className="space-y-4 font-bold text-sm">
                             <li><Link href="/services" className="hover:text-white transition-colors hover:underline decoration-primary underline-offset-4">Enterprise Scale</Link></li>
                             <li><Link href="/services" className="hover:text-white transition-colors hover:underline decoration-primary underline-offset-4">Digital Audit</Link></li>
@@ -44,7 +55,7 @@ const Footer: React.FC = () => (
                         </ul>
                     </div>
                     <div className="space-y-6 hidden md:block">
-                        <h4 className="text-xs uppercase tracking-[0.3em] font-black text-white">Legal</h4>
+                        <h2 className="text-xs uppercase tracking-[0.3em] font-black text-white">Legal</h2>
                         <ul className="space-y-4 font-bold text-sm">
                             <li><Link href="/privacy" className="hover:text-white transition-colors hover:underline decoration-primary underline-offset-4">Privacy</Link></li>
                             <li><Link href="/terms" className="hover:text-white transition-colors hover:underline decoration-primary underline-offset-4">Terms</Link></li>

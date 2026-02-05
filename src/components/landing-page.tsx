@@ -36,7 +36,7 @@ const Hero: React.FC = () => (
         <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
                 <div className="lg:w-1/2 space-y-8 text-center lg:text-left z-10">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 shadow-sm text-slate-600 text-[11px] font-bold uppercase tracking-widest animate-fade-in">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 shadow-sm text-slate-700 text-[11px] font-bold uppercase tracking-widest animate-fade-in">
                         <span className="relative flex h-2 w-2">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
@@ -48,13 +48,13 @@ const Hero: React.FC = () => (
                         Elevate Your <br className="hidden md:block" />
                         <span className="text-primary relative inline-block">
                             Business
-                            <svg className="absolute w-full h-3 -bottom-1 left-0 text-blue-200 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none">
+                            <svg className="absolute w-full h-3 -bottom-1 left-0 text-blue-200 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true">
                                 <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="none" />
                             </svg>
                         </span>
                     </h1>
 
-                    <p className="text-base md:text-lg text-slate-500 font-medium max-w-lg mx-auto lg:mx-0 leading-relaxed">
+                    <p className="text-base md:text-lg text-slate-600 font-medium max-w-lg mx-auto lg:mx-0 leading-relaxed">
                         High-impact consulting for ambitious companies. We combine data-driven strategy with digital innovation to help you dominate your market.
                     </p>
 
@@ -65,19 +65,19 @@ const Hero: React.FC = () => (
                         </Link>
                         <Link href="/services" className="group bg-white text-slate-900 border border-slate-200 font-bold px-8 py-3.5 rounded-full hover:border-primary/30 hover:bg-slate-50 transition-all shadow-sm text-sm flex items-center gap-2">
                             View Work
-                            <ChevronRight size={18} className="text-slate-400 group-hover:text-primary transition-colors" />
+                            <ChevronRight size={18} className="text-slate-500 group-hover:text-primary transition-colors" />
                         </Link>
                     </div>
 
                     <div className="flex items-center justify-center lg:justify-start gap-8 pt-8 border-t border-slate-200/60">
                         <div>
                             <div className="text-2xl font-bold text-slate-900">500+</div>
-                            <div className="text-[10px] uppercase tracking-widest font-bold text-slate-400 mt-1">Projects</div>
+                            <div className="text-[10px] uppercase tracking-widest font-bold text-slate-600 mt-1">Projects</div>
                         </div>
                         <div className="w-px h-10 bg-slate-200"></div>
                         <div>
                             <div className="text-2xl font-bold text-slate-900">98%</div>
-                            <div className="text-[10px] uppercase tracking-widest font-bold text-slate-400 mt-1">Success</div>
+                            <div className="text-[10px] uppercase tracking-widest font-bold text-slate-600 mt-1">Success</div>
                         </div>
                     </div>
                 </div>
@@ -137,7 +137,7 @@ const Expertise: React.FC = () => {
                 <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
                     <span className="text-primary font-bold uppercase tracking-[0.2em] text-[10px]">What We Do</span>
                     <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
-                        Transforming <span className="text-slate-400">Business Logic</span>
+                        Transforming <span className="text-slate-500">Business Logic</span>
                     </h2>
                 </div>
                 <div className="grid md:grid-cols-3 gap-8">
@@ -147,7 +147,7 @@ const Expertise: React.FC = () => {
                                 {f.icon}
                             </div>
                             <h3 className="text-lg font-bold mb-3 text-slate-900">{f.title}</h3>
-                            <p className="text-slate-500 text-sm leading-relaxed font-medium">{f.description}</p>
+                            <p className="text-slate-600 text-sm leading-relaxed font-medium">{f.description}</p>
                         </div>
                     ))}
                 </div>
@@ -176,7 +176,7 @@ const About: React.FC = () => (
 
                     <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border border-slate-100 max-w-[200px]">
                         <div className="text-3xl font-black text-primary mb-0.5">10+</div>
-                        <p className="text-[10px] uppercase tracking-widest font-bold text-slate-400">Years of Excellence</p>
+                        <p className="text-[10px] uppercase tracking-widest font-bold text-slate-600">Years of Excellence</p>
                     </div>
                 </div>
             </div>
@@ -251,14 +251,14 @@ const Testimonials: React.FC = () => {
                     {reviews.map((r, i) => (
                         <div key={i} className="p-8 bg-slate-50 rounded-[2rem] hover:bg-white border border-transparent hover:border-slate-100 hover:shadow-xl hover:shadow-slate-200/40 transition-all duration-300">
                             <div className="flex gap-1 text-yellow-400 mb-4">
-                                {[...Array(5)].map((_, i) => <CheckCircle2 key={i} size={14} fill="currentColor" className="text-yellow-400" />)}
+                                {[...Array(5)].map((_, i) => <CheckCircle2 key={i} size={14} fill="currentColor" className="text-yellow-400" aria-hidden="true" />)}
                             </div>
                             <p className="text-base text-slate-700 font-medium leading-relaxed mb-6">"{r.quote}"</p>
                             <div className="flex items-center gap-3">
                                 <Image src={r.avatar} alt={r.name} width={40} height={40} className="rounded-full bg-slate-200 object-cover" />
                                 <div>
-                                    <h4 className="font-bold text-slate-900 text-sm">{r.name}</h4>
-                                    <p className="text-[10px] text-slate-400 font-bold uppercase">{r.role}</p>
+                                    <h3 className="font-bold text-slate-900 text-sm">{r.name}</h3>
+                                    <p className="text-[10px] text-slate-600 font-bold uppercase">{r.role}</p>
                                 </div>
                             </div>
                         </div>

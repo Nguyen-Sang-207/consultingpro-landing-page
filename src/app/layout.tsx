@@ -45,12 +45,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${plusJakartaSans.variable} ${inter.variable} antialiased`}
       >
         <Navbar />
-        {children}
+        <main id="main-content">
+          {children}
+        </main>
         <ConditionalFooter />
       </body>
     </html>
